@@ -1,0 +1,98 @@
+.pad{
+    text-align: center;
+    margin-left: 15%;
+    width: 70%;
+    padding-top:10px!important;
+    padding-bottom:10px!important;
+}
+.but{
+    margin-left: 20%;
+    width: 60%;
+}
+.pading{
+    padding-top:10px!important;
+    padding-bottom:10px!important;
+}
+#tablaPrest  th{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaPrest  td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+
+#tablaHist th{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaHist td{
+    text-align: center;
+    width: 14.28%;
+    vertical-align: middle;
+}
+#tablaRes th{
+    text-align: center;
+    width: 14.28%;
+    vertical-align: middle;
+}
+#tablaRes td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaPA th{
+    text-align: center;
+    width: 14.28%;
+    vertical-align: middle;
+}
+#tablaPA td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#imageUser2{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 2px solid #fff;
+}
+
+.chart{
+    margin: 0 auto;
+    width: 50%;
+}
+@media screen and (max-width: 700px) {
+    .chart {
+        width: 100%;
+    }    
+}
+#tablaAll th{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaAll td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaIng th{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tablaIng td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+select, input{
+    border: 0;
+}
+

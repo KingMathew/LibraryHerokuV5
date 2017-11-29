@@ -1,0 +1,126 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway", sans-serif
+}
+
+.w3-bar-block .w3-bar-item {
+    padding: 20px
+}
+
+.myTop {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+#imageUser{
+    width: 100px;
+    height: 100px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 2px solid #faf5fa;
+
+}
+.mid{
+    position:absolute;
+    left:50%;
+    top:10px;
+    transform:translate(-50%,0%);
+    -ms-transform:translate(-50%,0%)
+}
+#nombre{
+    margin-top: 100px;
+    text-align: center;
+}
+#image1{
+    width: 200px;
+    height: 70px;
+}
+#title{
+    height: 200px;
+    width: 700px;
+}
+@media screen and (max-width: 700px) {
+    #title {
+        width: 350px;
+        height: 100px;
+    }    
+}
+.a{
+    height: 150px;
+}
+@media screen and (max-width: 800px) {
+    .a {        
+        height: 200px;
+    }    
+}
+@media screen and (max-width: 600px) {
+    .a {        
+        height: 120px;
+    }    
+}
+
+#face:hover{
+    color: #3B5998;
+}
+#tw:hover {
+    color: #4099FF;
+}
+#gp:hover {
+    color: #d34836;
+}
+#you:hover {
+    color: #ff0000;
+}
+.w3-card-4:hover{box-shadow:0 15px 20px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+
+
+#tablaMain th, td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+#tabla td{
+    text-align: center;
+    width: 12.5%;
+    vertical-align: middle;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+#container{
+    min-height: 100%;
+}
+#main{
+    overflow: auto;
+    padding-bottom: 70px;
+}
+.b{
+    position: relative;
+    height: 70px;
+    margin-top: -70px;
+    clear: both;
+}
+.w3-input{
+    text-align: center;
+}
+#miTabla th{
+    text-align: center;
+    vertical-align: middle;
+}
+#miTabla td{
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,114 @@
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('../Images/dark_background_line_surface_65896_602x339.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+select {
+    text-align: center;
+    text-align-last: center;
+}
+option {
+    text-align: center;
+}
+#contenedor_carga {
+    top: 0;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 2;
+}
+
+#contenedor_carga img {
+    height: 100px;
+    width: 350px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 160px;
+    margin: auto;
+    z-index: 2;
+}
+
+#contenedor_carga .tag {
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    font-size: 20px;
+    color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -160px;
+    margin: auto;
+    z-index: 2;
+}
+
+#carga {
+    border: 13px solid #ccc;
+    border-top-color: #000;
+    border-top-style: groove;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1s linear infinite;
+    -moz-animation: girar 1s linear infinite;
+    -o-animation: girar 1s linear infinite;
+    animation: girar 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #image {
+        width: 350px;
+        height: 100px;
+    }
+}
+#image{
+    margin: 0 auto;
+}
+
