@@ -6,23 +6,49 @@ function obtenerData() {
     var indic = 1;
     $.ajax({
         type: 'GET'
-        , url: "../ListarReservas"
+        , url: "../BuscarElementoPorNombre"
         , async: true
         , cache: false
         , success: function (resp) {
-            console.log(resp);
-            $.each(resp, function (indice, reservasPendientes) {
-                $("#tablaRes").append($("<tr>").append(("<td>"
-                        + reservasPendientes.nombreSol + "</td>"
-                        + "<td>" + reservasPendientes.cursoArea + "</td>"
-                        + "<td>" + reservasPendientes.nombre + "</td>"
-                        + "<td>" + reservasPendientes.cantidad + "</td>"
-                        + "<td>" + reservasPendientes.fechaActual + "</td>"
-                        + "<td>" + reservasPendientes.fechaReserva + "</td>"
-                        + "<td>" + reservasPendientes.estado + "</td>")));
+            $.each(resp, function (indice, inventario) {
+                $("#tablaPrest").append($("<tr id='" + indic + "' onclick='pp(this);'> ").append(("<td>" + inventario.etiqueta + "</td>"
+                        + "<td>" + inventario.nombre + "</td>"
+                        + "<td>" + inventario.cantidadDisponible + "</td>"
+                        + "<td>" + inventario.ubicacion + "</td>"
+                        + "<td>" + inventario.propiedad + "</td>"
+                        + "<td>" + inventario.responsable + "</td>"
+                        + "<td>" + inventario.area + "</td>"
+                        + "<td>" + inventario.colegio + "</td>")));
                 indic++;
             });
         }
+    });
+}
+function pp(x) {
+    var y = x.rowIndex;
+
+    var parametros = {
+        "identificador": y
+    };
+    $.ajax({
+        data: parametros,
+        url: "../Reservas",
+        type: "POST"
+    }).done(function (response) {
+        console.log(response);
+        var cantidad = response.cantidadDisponible;
+        if (cantidad <= 0) {
+            alert("No hay más elementos disponibles de este elemento");
+        } else {
+            document.getElementById('prestamo').style.display = 'block';
+            document.getElementById('element').innerHTML = response.etiqueta;
+            etiqueta = response.etiqueta;
+            document.getElementById('nombreLibro').innerHTML = response.nombre;
+            document.getElementById('cantidad').innerHTML = response.cantidadDisponible;
+            var input = document.getElementById("campo1");
+            input.setAttribute("max", cantidad);
+        }
+
     });
 }
 

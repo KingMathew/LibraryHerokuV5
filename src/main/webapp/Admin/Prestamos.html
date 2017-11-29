@@ -69,18 +69,18 @@
         <div id="prestamo" class="w3-modal">
             <div style="width: 30%" class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
-                    <span onclick="document.getElementById('prestamo').style.display = 'none'" class="w3-button w3-display-topright w3-large">x</span>
-                    <h1>Nuevo Prestamo</h1>
+                    <span onclick="document.getElementById('reserva').style.display = 'none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Nueva Reserva</h1>
                 </div>
-                <div class="w3-container">                                        
+                <div class="w3-container">
+                    <p class="pad">Numero de Identificación: <b><a id="miId"></a></b></p>
                     <p class="pad"><b><a id="nombreLibro"></a></b></p>                    
                     <p class="pad">Id del libro: <b><a id="element"></a></b></p>
                     <p class="pad">Cantidad Disponible: <b><a id="cantidad"></a></b></p> 
                     <p class="pad">Fecha de devolución:</p> 
-                    <p class="pading"><input id="campo2" type="date" class="pad min-today w3-input w3-padding-16 w3-border"></p>           
-                    <p class="pading"><input id="campoSol"  class="pad w3-input w3-padding-16 w3-border" type="text" placeholder="ID solicitante"></p>  
-                    <p class="pading"><input id="campo1" type="number" min="0" placeholder="Cantidad a prestar" onkeydown="return false"  class="pad w3-input w3-padding-16 w3-border"></p>
-                    <p class="pading"><button  class="w3-button w3-black w3-round-xlarge but" id="ingresar" onclick="Reserva($('#campo2').val(), $('#campo1').val(), $('#campoSol').val());" type="button">Prestar</button></p>
+                    <p class="pading"><input id="campo2" type="date" class="pad min-today w3-input w3-padding-16 w3-border"></p>  
+                    <p class="pading"><input id="campo1" type="number" min="0" placeholder="Cantidad a reservar" onkeydown="return false"  class="pad w3-input w3-padding-16 w3-border"></p>
+                    <p class="pading"><button  class="w3-button w3-black w3-round-xlarge but" id="ingresar" onclick="Reserva2($('#campo2').val(), $('#campo1').val());" type="button">Reservar</button></p>
                 </div>
             </div>
         </div>
