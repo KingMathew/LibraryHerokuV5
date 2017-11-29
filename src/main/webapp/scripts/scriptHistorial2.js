@@ -30,13 +30,13 @@ function obtenerData() {
             console.log(resp);
             $.each(resp, function (indice, h) {
                 $("#tablaHist2").append($("<tr>").append(("<td>"
-                        + h.nombreUsuario + "</td>"
+                        + h.nombreSol + "</td>"
                         + "<td>" + h.cursoArea + "</td>"
-                        + "<td>" + h.nombreElemento + "</td>"
-                        + "<td>" + h.cantidadPrestamo + "</td>"
-                        + "<td>" + h.fechaInicio + "</td>"
-                        + "<td>" + h.fechaDevolucion + "</td>"
-                        + "<td>" + h.estadoPrestamo + "</td>")));
+                        + "<td>" + h.nombre + "</td>"
+                        + "<td>" + h.cantidad + "</td>"
+                        + "<td>" + h.fechaActual + "</td>"
+                        + "<td>" + h.fechaReserva + "</td>"
+                        + "<td>" + h.estado + "</td>")));
                 indic++;
             });
         }
