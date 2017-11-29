@@ -1,7 +1,6 @@
 var etiqueta = "0";
 $(document).ready(function () {
     obtenerData();
-    getUser();
 });
 function obtenerData() {
     var indic = 1;
@@ -106,51 +105,6 @@ function Reserva(fechaRes, cantidad, idSol) {
             } else {
                 alert("Prestamo realizado satisfactoriamente");
                 window.location.href = "historial.html";
-            }
-        });
-
-    } else {
-        alert("Debe llenar los campos");
-    }
-
-}
-var id = "";
-function getUser() {
-    $.ajax({
-        url: "../Sesion",
-        type: "GET"
-
-    }).done(function (response) {
-        console.log(response);
-        if (response == "false") {
-            window.location.href = "../index.html";
-        } else {
-            document.getElementById('miId').innerHTML = response.identificador;
-            id = response.identificador;
-        }
-    });
-}
-function Reserva2(fechaRes, cantidad) {
-
-    if (fechaRes != "" && cantidad != "") {
-        var parametros = {
-            "idSol": id,
-            "idElm": etiqueta,
-            "fechaRes": fechaRes,
-            "cantidad": cantidad
-        };
-        $.ajax({
-            data: parametros,
-            url: "../Reservas",
-            type: "GET"
-
-        }).done(function (response) {
-            console.log(response);
-            if (response != false) {
-                alert("No se pudo realizar la reserva");
-            } else {
-                alert("Reserva realizada satisfactoriamente");
-                window.location.href = "historialReservas.html";
             }
         });
 
