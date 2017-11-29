@@ -150,7 +150,7 @@ function Reserva2(fechaRes, cantidad) {
                 alert("No se pudo realizar la reserva");
             } else {
                 alert("Reserva realizada satisfactoriamente");
-                window.location.href = "historial.html";
+                window.location.href = "historialReservas.html";
             }
         });
 
