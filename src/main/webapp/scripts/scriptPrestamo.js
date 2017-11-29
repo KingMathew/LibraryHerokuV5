@@ -125,8 +125,8 @@ function getUser() {
         if (response == "false") {
             window.location.href = "../index.html";
         } else {
-            document.getElementById('miId').innerHTML = response.Identificador;
-            id = response.Identificador;
+            document.getElementById('miId').innerHTML = response.identificador;
+            id = response.identificador;
         }
     });
 }
