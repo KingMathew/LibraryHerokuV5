@@ -48,7 +48,7 @@ function getDataRow() {
                 console.log(response);
                 var j = confirm("Se devolverá el elemento: " + b + "\nUsado por: " + a + "\nCantidad: " + c);
                 if (j == true) {
-                    executeDev(j);
+                    executeDev();
                 } else {
                     alert("No se realizó la devolución");
                 }
@@ -56,12 +56,8 @@ function getDataRow() {
         };
     }
 }
-function executeDev(a) {
-    var parametros = {
-        "boolean": a
-    };
+function executeDev() {
     $.ajax({
-        data: parametros,
         url: "../Devoluciones",
         type: "POST"
     }).done(function (response) {
