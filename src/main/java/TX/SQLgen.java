@@ -111,6 +111,7 @@ public class SQLgen<T> {
                     break;
                 }
             }
+            query+=" order by etiqueta asc";
             System.out.println(query);
             Statement st = this.conexion.createStatement();
             ResultSet rs = st.executeQuery(query);
