@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <title>Historial</title>
+    <title>Reservas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,9 +12,9 @@
     <link rel="shortcut icon" href="https://kingmathew.000webhostapp.com/images/icono.png">
     <script type="text/javascript" src="../scripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../scripts/scriptHome.js"></script>
-    <script type="text/javascript" src="../scripts/scriptHistorial.js"></script>
+    <script type="text/javascript" src="../scripts/scriptReservas.js"></script>
     <script>
-        window.setTimeout("document.getElementById('contenedor_carga').style.display='none';", 1500);
+        window.setTimeout("document.getElementById('contenedor_carga').style.display='none';", 1500);        
     </script>
     <body>
         <div id="contenedor_carga">
@@ -32,17 +32,17 @@
             <a class="w3-bar-item w3-button" href="reservas.html" onclick="w3_close()">Reservar</a>
             <a class="w3-bar-item w3-button" href="historial.html" onclick="w3_close()">Historial</a>
             <a class="w3-bar-item w3-button" href="Busquedas.html" onclick="w3_close()">Busquedas</a>
-        </nav>      
+        </nav>       
         <div class="w3-container myTop">
             <div class="w3-white w3-xlarge w3-border-bottom">
                 <div class="w3-button w3-padding-16 w3-left" title="Menú" onclick="w3_open()"><i class="fa fa-bars"></i></div>
                 <div class="w3-button w3-right w3-padding-16" title="Cerrar Sesión" onclick="closeSesion()"><i class="fa fa-power-off"></i></div>
-                <div class="w3-center w3-padding-16">Historial Prestamos</div>
+                <div class="w3-center w3-padding-16">Reservas Pendientes</div>
             </div>
         </div>        
         <div class="w3-main w3-content w3-padding" id="container" style="max-width:1200px;margin-top:100px">
             <div class="w3-content" id="main">
-                <table class="w3-table-all" id="tablaHist">
+                <table class="w3-table-all" id="tablaRes">
                     <thead>
                         <tr class="w3-black">
                             <th>Nombre</th>                                    
@@ -50,17 +50,12 @@
                             <th>Elemento</th>                            
                             <th>Cantidad</th>
                             <th>Fecha de Pedido</th>
-                            <th>Fecha de Devolución</th>
+                            <th>Fecha de Prestamo</th>
                             <th>Estado</th>
                         </tr>
                     </thead>
 
                 </table>
-                <br>
-                <br>
-
-                <p class="letra">Descargar tabla en Excel</p>                        
-                <a href="../Excel"><img style="width: 70px; height: 70px;" src="https://raw.githubusercontent.com/KingMathew/Biblioteca2/master/src/main/webapp/Imagenes/Excel.png" alt="Not Found"></a>
 
             </div>
         </div>
@@ -78,3 +73,4 @@
     </body>
 
 </html>
+

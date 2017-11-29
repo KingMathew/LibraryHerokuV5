@@ -64,7 +64,7 @@ function executeDev() {
         console.log(response);
         if (response == 1) {
             alert("Devolución realizada correctamente");
-            window.location.href = "Devoluciones.html";
+            window.location.href = "historial.html";
         }else{
             alert("No se pudo realizar la devolución");
         }

@@ -166,7 +166,7 @@ function iniciarSesion() {
                     alert("Por favor realice la verificación por correo");
                 } else {
                     if (data.tipo == "Estudiante" || data.tipo == "Docente") {
-                        window.location.href = "Usuario/homeUser.jsp";
+                        window.location.href = "Usuario/homeUser.html";
                     }
                     if (data.tipo == "Directivo" || data.tipo == "Administrativo") {
                         window.location.href = "Admin/homeAdmin.html";
