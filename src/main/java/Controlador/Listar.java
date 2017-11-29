@@ -23,7 +23,6 @@ public class Listar extends HttpServlet {
             ArrayList<inventario> lista = null;
             DaoElementos daoE = new DaoElementos();
             lista = daoE.listarTodo();
-            System.out.println(lista.size());
             String json = new Gson().toJson(lista);
             response.setContentType("application/json");
             response.getWriter().write(json);

@@ -265,7 +265,7 @@ public class SQLgen<T> {
     public ArrayList<T> Select4(T p) {
         ArrayList<T> res = new ArrayList<T>();
         Field[] f = p.getClass().getDeclaredFields();
-        String query = "select * from " + p.getClass().getSimpleName();
+        String query = "select * from " + p.getClass().getSimpleName()+" order by etiqueta asc";
         try {
             System.out.println(query);
             Statement st = this.conexion.createStatement();

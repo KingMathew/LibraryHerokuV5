@@ -27,7 +27,7 @@ public class DaoElementos {
         inventario inv = new inventario();
         respuesta = a.Select4(inv);
         return respuesta;
-    }
+    }    
 
     public ArrayList<inventario> buscar(String et) throws InvocationTargetException, InstantiationException, NoSuchMethodException {
         ArrayList<inventario> respuesta = new ArrayList();
