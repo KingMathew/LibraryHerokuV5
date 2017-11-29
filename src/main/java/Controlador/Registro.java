@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Random;
 import javax.mail.MessagingException;
 import javax.mail.Transport;
@@ -78,14 +77,14 @@ public class Registro extends HttpServlet {
             message.addHeader("Disposition-Notification-To", "librarisoftcolombia@gmail.com");
             message.setSubject("Correo de verificacion, porfavor no responder");
             message.setText(
-                    " <img src='https://kingmathew.000webhostapp.com/images/titulo1.png' alt='Not-Found'> \n"
+                    " <img src='https://raw.githubusercontent.com/KingMathew/SoftHerokuV2/master/src/main/webapp/Images/titulo1.png' alt='Not-Found'> \n"
                     + "<br> \n"
                     + " Este es un correo de verificacion \n"
                     + "Gracias por registrarse en LibrarySoft \n"
                     + "Porfavor haga click en el siguiente enlace\n"
                     + "para verificar su cuenta \n"
                     + "<br> \n"
-                    + " <a href='http://localhost:8080/LibrarySoft-2.0/ConfirmacionCorreo?usuario=" + identificador + "&aleatorio=" + cadena
+                    + " <a href='http://librarysoft.herokuapp.com/myApp/ConfirmacionCorreo?usuario=" + identificador + "&aleatorio=" + cadena
                     + "'>Enlace de verificación</a>  ", "ISO-8859-1", "html");
 
             // Lo enviamos.
