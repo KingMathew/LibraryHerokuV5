@@ -484,6 +484,40 @@ public class SQLgen<T> {
 
         return respuesta;
     }
+    public ArrayList<reservasPendientes> listarReservas2(String id) {
+        //1.Consulta
+
+        ArrayList<reservasPendientes> respuesta = new ArrayList();
+        String consulta = "select usuarios.nombreSol, usuarios.cursoArea, inventario.nombre, reserva.cantidad,   reserva.fechaActual, reserva.fechaReserva, reserva.estado\n"
+                + "from((inventario inner join reserva on (inventario.etiqueta = reserva.idElemento)) inner join usuarios on (usuarios.identificador=reserva.idSol))"
+                + "where usuarios.identificador = '"+id+"'";
+
+        try {
+
+            Statement statement = this.conexion.createStatement();
+
+            ResultSet resultado
+                    = statement.executeQuery(consulta);
+            while (resultado.next()) {
+                reservasPendientes pr = new reservasPendientes();
+
+                pr.setNombreSol(resultado.getString("nombreSol"));
+                pr.setCursoArea(resultado.getString("cursoArea"));
+                pr.setNombre(resultado.getString("nombre"));
+                pr.setCantidad(resultado.getInt("cantidad"));
+                pr.setFechaActual(resultado.getString("fechaActual"));
+                pr.setFechaReserva(resultado.getString("fechaReserva"));
+                pr.setEstado(resultado.getString("estado"));
+
+                respuesta.add(pr);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return respuesta;
+    }
 
     public boolean restarInventario(int etiqueta, int cantidad) {
         boolean resultado = false;
