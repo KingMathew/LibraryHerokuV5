@@ -11,7 +11,7 @@ function obtenerData() {
         , success: function (resp) {
             console.log(resp);
             if (resp == "") {
-                document.getElementById('mensaje').innerHTML = "Actualmente no hay elementos en calidad de prestamo";                
+                document.getElementById('mensaje').innerHTML = "Actualmente no hay elementos en calidad de prestamo";
             } else {
                 $.each(resp, function (indice, HistorialPrestamos) {
                     $("#tablaPA").append($("<tr onclick='getDataRow();'>").append(("<td>"
@@ -62,8 +62,13 @@ function executeDev() {
         type: "POST"
     }).done(function (response) {
         console.log(response);
-        alert("Devolución realizada correctamente");
-        window.location.href = "Devoluciones.html";
+        if (response == 1) {
+            alert("Devolución realizada correctamente");
+            window.location.href = "Devoluciones.html";
+        }else{
+            alert("No se pudo realizar la devolución");
+        }
+
 
     });
 }
