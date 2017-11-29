@@ -523,11 +523,10 @@ public class SQLgen<T> {
         int newCantidad = Integer.valueOf(cantidad);
         try {
 
-            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorSol=? and etiquetaInv=?";
+            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorSol='"+idSol+"' and etiquetaInv=?";
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
-            statement.setString(1, idSol);
-            statement.setString(2, etiqetaInv);
+            statement.setString(1, etiqetaInv);
             System.out.println(consulta);
             resultado = statement.execute();
 
