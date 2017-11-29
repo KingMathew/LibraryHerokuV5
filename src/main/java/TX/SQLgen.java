@@ -522,13 +522,9 @@ public class SQLgen<T> {
         int etiqueta = Integer.valueOf(etiqetaInv);
         int newCantidad = Integer.valueOf(cantidad);
         try {
-
-            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorSol='"+idSol+"' and etiquetaInv=?";
-
+            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorsol='"+idSol+"' and etiquetainv="+etiqetaInv+"";
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
-            statement.setString(1, etiqetaInv);
             a = statement.executeUpdate();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
