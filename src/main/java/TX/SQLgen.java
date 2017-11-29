@@ -451,7 +451,7 @@ public class SQLgen<T> {
         boolean resultado = false;
         try {
 
-            String consulta = "UPDATE inventario SET cantidadDisponible = cantidadDisponible-" + cantidad + " WHERE etiqueta=?";
+            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)-"+cantidad+" where etiqueta =?";
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setInt(1, etiqueta);
@@ -467,7 +467,7 @@ public class SQLgen<T> {
         boolean resultado = false;
         try {
 
-            String consulta = "UPDATE inventario SET cantidadDisponible = cantidadDisponible+" + cantidad + " WHERE etiqueta=?";
+            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)+"+cantidad+" where etiqueta =?";
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setInt(1, etiqueta);
