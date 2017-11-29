@@ -1,7 +1,6 @@
 package DAO;
 
 import Modelo.prestamo;
-import Modelo.usuarios;
 import TX.SQLgen;
 import java.net.URISyntaxException;
 import java.sql.SQLException;

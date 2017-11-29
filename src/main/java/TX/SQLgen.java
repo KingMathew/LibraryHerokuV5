@@ -139,6 +139,43 @@ public class SQLgen<T> {
         return res;
 
     }
+    public ArrayList<T> Select5(T p) throws InvocationTargetException, NoSuchMethodException, InstantiationException {
+        ArrayList<T> res = new ArrayList<T>();
+        Field[] f = p.getClass().getDeclaredFields();
+        String query = "select * from " + p.getClass().getSimpleName() + " where ";
+        try {
+            for (int i = 0; i < f.length; i++) {
+                if (f[i].get(p) != null) {
+                    query += f[i].getName() + " = '" + f[i].get(p) + "'";
+                    break;
+                }
+            }
+            Statement st = this.conexion.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                T f2 = (T) p.getClass().newInstance();
+                Field[] f3 = f2.getClass().getDeclaredFields();
+                for (int i = 0; i < f.length; i++) {
+                    String methodName = "set" + f3[i].getName();
+                    Method setNameMethod = f2.getClass().getMethod(methodName, String.class);
+                    String r = rs.getString("" + f3[i].getName());
+                    setNameMethod.invoke(f2, r);
+                }
+                res.add((T) f2);
+            }
+            st.close();
+        } catch (SQLException ex) {
+            System.out.println("Failed to make update!");
+            ex.printStackTrace();
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(SQLgen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(SQLgen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(res);
+        return res;
+
+    }
 
     //select * from .... where .... = .... and ..... = .......
     public ArrayList<T> Select2(T p) {

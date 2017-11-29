@@ -37,7 +37,7 @@ public class NewPrestamo extends HttpServlet {
             SQLgen sql = new SQLgen();
             usuarios user = new usuarios(idsol);
             ArrayList<usuarios> arr = new ArrayList<usuarios>();
-            arr = sql.Select(user);
+            arr = sql.Select5(user);
             if (arr.size() == 0) {
                 String json = new Gson().toJson("NOT-FOUND");
                 response.setContentType("application/json");
