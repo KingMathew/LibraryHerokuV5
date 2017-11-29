@@ -517,8 +517,8 @@ public class SQLgen<T> {
         return resultado;
     }
 
-    public boolean cambiarEstado(String idSol, String etiqetaInv, String cantidad) {
-        boolean resultado = false;
+    public int cambiarEstado(String idSol, String etiqetaInv, String cantidad) {
+        int a = 0;
         int etiqueta = Integer.valueOf(etiqetaInv);
         int newCantidad = Integer.valueOf(cantidad);
         try {
@@ -527,14 +527,13 @@ public class SQLgen<T> {
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setString(1, etiqetaInv);
-            System.out.println(consulta);
-            resultado = statement.execute();
+            a = statement.executeUpdate();
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         sumarInventario(etiqueta, newCantidad);
-        return resultado;
+        return a;
     }
 
     public usuarios getIdUser(String nombre) {

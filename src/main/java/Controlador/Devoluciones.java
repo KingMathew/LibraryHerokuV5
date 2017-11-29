@@ -55,9 +55,9 @@ public class Devoluciones extends HttpServlet {
             throws ServletException, IOException {
         try {
             SQLgen sqLgen = new SQLgen();
-            boolean resultado = true;
-            resultado = sqLgen.cambiarEstado(identificador, etiquetaInv, cantidadDev);
-            String json = new Gson().toJson(resultado);
+            int a = 0;
+            a = sqLgen.cambiarEstado(identificador, etiquetaInv, cantidadDev);
+            String json = new Gson().toJson(a);
             response.setContentType("application/json");
             response.getWriter().write(json);
         } catch (URISyntaxException ex) {
