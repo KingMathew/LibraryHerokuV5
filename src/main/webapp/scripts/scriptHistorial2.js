@@ -31,7 +31,7 @@ function obtenerData() {
         , success: function (resp) {
             console.log(resp);
             $.each(resp, function (indice, h) {
-                $("#tablaHist").append($("<tr>").append(("<td>"
+                $("#tablaHist2").append($("<tr>").append(("<td>"
                         + h.nombreUsuario + "</td>"
                         + "<td>" + h.cursoArea + "</td>"
                         + "<td>" + h.nombreElemento + "</td>"
