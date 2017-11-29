@@ -1,11 +1,9 @@
 package Controlador;
 
-import DAO.DaoElementos;
-import Modelo.inventario;
+
 import TX.SQLgen;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
