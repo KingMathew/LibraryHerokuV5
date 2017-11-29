@@ -40,7 +40,7 @@ function pp(x) {
         if (cantidad <= 0) {
             alert("No hay más elementos disponibles de este elemento");
         } else {
-            document.getElementById('prestamo').style.display = 'block';
+            document.getElementById('reserva').style.display = 'block';
             document.getElementById('element').innerHTML = response.etiqueta;
             etiqueta = response.etiqueta;
             document.getElementById('nombreLibro').innerHTML = response.nombre;
