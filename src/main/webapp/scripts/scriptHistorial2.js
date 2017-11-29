@@ -24,11 +24,9 @@ function obtenerData() {
     };
     $.ajax({
         data: parametros,
-        type: 'GET'
-        , url: "../ListarReservasUsuario"
-        , async: true
-        , cache: false
-        , success: function (resp) {
+        type: 'GET',
+        url: "../ListarReservasUsuario",
+        success: function (resp) {
             console.log(resp);
             $.each(resp, function (indice, h) {
                 $("#tablaHist2").append($("<tr>").append(("<td>"
