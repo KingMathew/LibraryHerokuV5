@@ -485,8 +485,6 @@ public class SQLgen<T> {
         return respuesta;
     }
     public ArrayList<reservasPendientes> listarReservas2(String id) {
-        //1.Consulta
-
         ArrayList<reservasPendientes> respuesta = new ArrayList();
         String consulta = "select usuarios.nombreSol, usuarios.cursoArea, inventario.nombre, reserva.cantidad,   reserva.fechaActual, reserva.fechaReserva, reserva.estado\n"
                 + "from((inventario inner join reserva on (inventario.etiqueta = reserva.idElemento)) inner join usuarios on (usuarios.identificador=reserva.idSol))"
