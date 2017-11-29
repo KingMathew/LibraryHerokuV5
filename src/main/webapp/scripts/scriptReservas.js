@@ -18,7 +18,7 @@ function obtenerData() {
                         + "<td>" + reservasPendientes.cantidad + "</td>"
                         + "<td>" + reservasPendientes.fechaActual + "</td>"
                         + "<td>" + reservasPendientes.fechaReserva + "</td>"
-                        + "<td>" + reservasPendientes.estado + "</td>")))
+                        + "<td>" + reservasPendientes.estado + "</td>")));
                 indic++;
             });
         }

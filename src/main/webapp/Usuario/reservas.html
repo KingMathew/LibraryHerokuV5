@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://kingmathew.000webhostapp.com/images/icono.png">
     <script type="text/javascript" src="../scripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../scripts/scriptHome.js"></script>
-    <script type="text/javascript" src="../scripts/scriptReservas.js"></script>
+    <script type="text/javascript" src="../scripts/scriptPrestamo.js"></script>
     <script>
         window.setTimeout("document.getElementById('contenedor_carga').style.display='none';", 1500);        
     </script>
@@ -42,21 +42,40 @@
         </div>        
         <div class="w3-main w3-content w3-padding" id="container" style="max-width:1200px;margin-top:100px">
             <div class="w3-content" id="main">
-                <table class="w3-table-all" id="tablaRes">
-                    <thead>
-                        <tr class="w3-black">
-                            <th>Nombre</th>                                    
-                            <th>Curso</th>
-                            <th>Elemento</th>                            
-                            <th>Cantidad</th>
-                            <th>Fecha de Pedido</th>
-                            <th>Fecha de Prestamo</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-
+                <div class="w3-padding-16">
+                    <input id="Busqueda"  onkeyup="Buscar()" class="w3-input w3-border" type="text" style="width: 70%; margin-left: 15%; text-align: center;"  placeholder="Busca el elemento a prestar">
+                </div>
+                <table class="w3-table-all w3-hoverable" id="tablaPrest">                    
+                    <tr class="w3-black">
+                        <th>Etiqueta</th>
+                        <th>Nombre</th>
+                        <th>CantidadDisponible</th>
+                        <th>Ubicacion</th>
+                        <th>Propiedad</th>
+                        <th>Responsable</th> 
+                        <th>Area</th>
+                        <th>Colegio</th>
+                    </tr>
                 </table>
 
+            </div>
+        </div>
+        <div id="prestamo" class="w3-modal">
+            <div style="width: 30%" class="w3-modal-content w3-animate-zoom">
+                <div class="w3-container w3-black">
+                    <span onclick="document.getElementById('prestamo').style.display = 'none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Nueva Reserva</h1>
+                </div>
+                <div class="w3-container">
+                    <p class="pading">Numero de Identificación: <b><a id="miId"></a></b></p>
+                    <p class="pad"><b><a id="nombreLibro"></a></b></p>                    
+                    <p class="pad">Id del libro: <b><a id="element"></a></b></p>
+                    <p class="pad">Cantidad Disponible: <b><a id="cantidad"></a></b></p> 
+                    <p class="pad">Fecha de devolución:</p> 
+                    <p class="pading"><input id="campo2" type="date" class="pad min-today w3-input w3-padding-16 w3-border"></p>  
+                    <p class="pading"><input id="campo1" type="number" min="0" placeholder="Cantidad a prestar" onkeydown="return false"  class="pad w3-input w3-padding-16 w3-border"></p>
+                    <p class="pading"><button  class="w3-button w3-black w3-round-xlarge but" id="ingresar" onclick="Reserva2($('#campo2').val(), $('#campo1').val());" type="button">Reservar</button></p>
+                </div>
             </div>
         </div>
 

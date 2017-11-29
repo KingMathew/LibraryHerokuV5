@@ -1,6 +1,7 @@
 var etiqueta = "0";
 $(document).ready(function () {
     obtenerData();
+    getUser();
 });
 function obtenerData() {
     var indic = 1;
@@ -113,6 +114,52 @@ function Reserva(fechaRes, cantidad, idSol) {
     }
 
 }
+var id = "";
+function getUser() {
+    $.ajax({
+        url: "../Sesion",
+        type: "GET"
+
+    }).done(function (response) {
+        console.log(response);
+        if (response == "false") {
+            window.location.href = "../index.html";
+        } else {
+            document.getElementById('miId').innerHTML = response.Identificador;
+            id = response.Identificador;
+        }
+    });
+}
+function Reserva2(fechaRes, cantidad) {
+
+    if (fechaRes != "" && cantidad != "") {
+        var parametros = {
+            "idSol": id,
+            "idElm": etiqueta,
+            "fechaRes": fechaRes,
+            "cantidad": cantidad
+        };
+        $.ajax({
+            data: parametros,
+            url: "../Reservas",
+            type: "GET"
+
+        }).done(function (response) {
+            console.log(response);
+            if (response != false) {
+                alert("No se pudo realizar la reserva");
+            } else {
+                alert("Reserva realizada satisfactoriamente");
+                window.location.href = "historial.html";
+            }
+        });
+
+    } else {
+        alert("Debe llenar los campos");
+    }
+
+}
+
 $(function () {
     $('[type="date"].min-today').prop('min', function () {
         return new Date().toJSON().split('T')[0];

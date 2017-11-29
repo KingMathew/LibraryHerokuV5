@@ -15,7 +15,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class Reservas extends HttpServlet {
 
@@ -24,13 +23,12 @@ public class Reservas extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            HttpSession session = request.getSession(false);
-            String usuario = (String) session.getAttribute("user");
+            
             java.util.Date utilDate = new java.util.Date();
             long lnMilisegundos = utilDate.getTime();
-
             String idElm = request.getParameter("idElm");
             java.sql.Date sqlDate = new java.sql.Date(lnMilisegundos);
+            String usuario = request.getParameter("idSol");
             String fechaRes = request.getParameter("fechaRes");
             String cantidad = request.getParameter("cantidad");
             String estado = "Pendiente";
