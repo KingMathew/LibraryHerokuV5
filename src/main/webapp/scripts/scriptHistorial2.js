@@ -14,15 +14,13 @@ function getUser() {
             window.location.href = "../index.html";
         } else {
             id = response.identificador;
-            alert(id);
         }
     });
 }
 function obtenerData() {
-    alert(id);
     var indic = 1;
     var parametros = {
-        "id": id
+        "ident": id
     };
     $.ajax({
         data: parametros,

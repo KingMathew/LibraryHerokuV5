@@ -25,14 +25,13 @@ public class ListarReservasUsuario extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null) {           
             try {
-                String id = request.getParameter("id");
+                String id = request.getParameter("ident");
                 SQLgen sqLgen = new SQLgen();
                 ArrayList<reservasPendientes> lista = new ArrayList<reservasPendientes>();
                 lista = sqLgen.listarReservas2(id);
                 String json = new Gson().toJson(lista);
-                String json2 = new Gson().toJson(id);
                 response.setContentType("application/json");
-                response.getWriter().write(json2);
+                response.getWriter().write(json);
             } catch (URISyntaxException ex) {
                 Logger.getLogger(ListarReservasUsuario.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {
