@@ -14,6 +14,7 @@ function getUser() {
             window.location.href = "../index.html";
         } else {
             id = response.identificador;
+            alert(id);
         }
     });
 }
