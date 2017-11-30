@@ -31,7 +31,7 @@ public class ListarReservasUsuario extends HttpServlet {
                 lista = sqLgen.listarReservas2(id);
                 String json = new Gson().toJson(lista);
                 response.setContentType("application/json");
-                response.getWriter().write(id);
+                response.getWriter().write(json);
             } catch (URISyntaxException ex) {
                 Logger.getLogger(ListarReservasUsuario.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {

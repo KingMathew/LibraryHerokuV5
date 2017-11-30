@@ -18,6 +18,7 @@ function getUser() {
     });
 }
 function obtenerData() {
+    alert(id);
     var indic = 1;
     var parametros = {
         "id": id
