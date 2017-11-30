@@ -1,6 +1,8 @@
 Ejemplo que permite desplegar una aplicacion java sobre Heroku.
 Incluye: 
 Conexion con base de datos Posgresql.
-Configuracion para generacion gr·ficos.
+Configuracion para generacion gr√°ficos.
+Descarga de archivos en Excel
+Carga a base de datos
 
-Aplicacion "HolaMUndo" para el curso de Bases de Datos universidad Sergio Arboleda.
+
