@@ -13,16 +13,10 @@ public class MainGlassfish {
 
     public static void main(String[] args) throws Exception {
         String webappDirLocation = "src/main/webapp/";
-
-        // Look for that variable and default to 8080 if it isn't there.
         String webPort = System.getenv("PORT");
         if (webPort == null || webPort.isEmpty()) {
             webPort = "8090";
         }
-
-        /**
-         * Create and start GlassFish which listens at 8080 http port
-         */
         GlassFishProperties gfProps = new GlassFishProperties();
         gfProps.setPort("http-listener", Integer.valueOf(webPort)); // refer
         gfProps.setProperty("domain-dir", "glassfishDomain");

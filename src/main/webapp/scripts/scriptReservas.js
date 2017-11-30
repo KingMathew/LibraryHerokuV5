@@ -68,35 +68,38 @@ function getUser() {
         }
     });
 }
-function Reserva2(fechaRes, cantidad) {
+function Buscar() {
 
-    if (fechaRes != "" && cantidad != "") {
-        var parametros = {
-            "idSol": id,
-            "idElm": etiqueta,
-            "fechaRes": fechaRes,
-            "cantidad": cantidad
-        };
-        $.ajax({
-            data: parametros,
-            url: "../Reservas",
-            type: "GET"
+    var tableReg = document.getElementById('tablaPrest');
+    var searchText = document.getElementById('Busqueda').value.toLowerCase();
+    var cellsOfRow = "";
+    var found = false;
+    var compareWith = "";
 
-        }).done(function (response) {
-            console.log(response);
-            if (response != false) {
-                alert("No se pudo realizar la reserva");
-            } else {
-                alert("Reserva realizada satisfactoriamente");
-                window.location.href = "historialReservas.html";
+    for (var i = 1; i < tableReg.rows.length; i++)
+    {
+        cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+        found = false;
+        // Recorremos todas las celdas
+        for (var j = 0; j < cellsOfRow.length && !found; j++)
+        {
+            compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+            // Buscamos el texto en el contenido de la celda
+            if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+            {
+                found = true;
             }
-        });
-
-    } else {
-        alert("Debe llenar los campos");
+        }
+        if (found)
+        {
+            tableReg.rows[i].style.display = '';
+        } else {
+            tableReg.rows[i].style.display = 'none';
+        }
     }
-
 }
+
+
 
 
 
