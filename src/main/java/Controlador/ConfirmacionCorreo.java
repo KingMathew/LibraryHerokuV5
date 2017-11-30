@@ -75,7 +75,7 @@ public class ConfirmacionCorreo extends HttpServlet {
                                 + "                <div class=\"w3-container\">\n"
                                 + "                    <p><input id=\"campo1\" style=\"text-align: center; margin-left: 15%; width: 70%\" class=\"w3-input w3-padding-16 w3-border\" type=\"text\" placeholder=\"Usuario\" required></p>\n"
                                 + "                    <p><input id=\"campo2\" style=\"text-align: center; margin-left: 15%; width: 70%\" onKeyDown=\"if (event.keyCode == 13)\n"
-                                + "                                iniciarSesion();\" class=\"w3-input w3-padding-16 w3-border\" type=\"password\" placeholder=\"Contraseña\" required></p>                        \n"
+                                + "                                iniciarSesion();\" class=\"w3-input w3-padding-16 w3-border\" type=\"password\" placeholder=\"Password\" required></p>                        \n"
                                 + "                    <p><button style=\"margin-left: 20%; width: 60%\" class=\"w3-button w3-black w3-round-xlarge\" type=\"submit\" onclick=\"iniciarSesion();\">INGRESAR</button></p>\n"
                                 + "                </div>\n"
                                 + "            </div>\n"
