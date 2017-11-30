@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    obtenerData();
     getUser();
+    obtenerData();    
 });
 var id = "";
 function getUser() {
