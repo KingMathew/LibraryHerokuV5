@@ -44,7 +44,6 @@ public class cargarBaseDatos extends HttpServlet {
             String json = new Gson().toJson(respuesta);
             response.setContentType("application/json");
             response.getWriter().write(json);
-
         } catch (JSONException ex) {
             Logger.getLogger(cargarBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
         } catch (URISyntaxException ex) {
@@ -56,12 +55,6 @@ public class cargarBaseDatos extends HttpServlet {
         } catch (IllegalAccessException ex) {
             Logger.getLogger(cargarBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
 
     }
 

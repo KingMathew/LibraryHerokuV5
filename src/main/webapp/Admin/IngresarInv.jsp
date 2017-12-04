@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <title>Ingresar</title>
@@ -25,20 +26,20 @@
             </div>
         </div>
         <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:25%;min-width:300px" id="mySidebar">
-            <a href="perfil.html"><img src="" id="imageUser" class="mid" alt="NF"></a>
+            <a href="perfil.jsp"><img src="" id="imageUser" class="mid" alt="NF"></a>
             <p id="nombre" class="w3-bar-item"></p>            
-            <a class="w3-bar-item w3-button w3-theme-dark" href="homeAdmin.html" onclick="w3_close()">Home</a>
-            <a class="w3-bar-item w3-button" href="Listados.html" onclick="w3_close()">Inventario Disponible</a>
-            <a class="w3-bar-item w3-button" href="IngresarInv.html" onclick="w3_close()">Ingresar Libro</a>
-            <a class="w3-bar-item w3-button" href="Modificar.html" onclick="w3_close()">Modificar</a>
-            <a class="w3-bar-item w3-button" href="Prestamos.html" onclick="w3_close()">Prestamos</a>
-            <a class="w3-bar-item w3-button" href="Devoluciones.html" onclick="w3_close()">Devoluciones</a>
-            <a class="w3-bar-item w3-button" href="reservas.html" onclick="w3_close()">Reservas Pendientes</a>
-            <a class="w3-bar-item w3-button" href="historial.html" onclick="w3_close()">Historial</a>
-            <a class="w3-bar-item w3-button" href="Busquedas.html" onclick="w3_close()">Busquedas</a>
-            <a class="w3-bar-item w3-button" href="Estadisticas.html" onclick="w3_close()">Estadísticas</a>
+            <a class="w3-bar-item w3-button w3-theme-dark" href="homeAdmin.jsp" onclick="w3_close()">Home</a>
+            <a class="w3-bar-item w3-button" href="Listados.jsp" onclick="w3_close()">Inventario Disponible</a>
+            <a class="w3-bar-item w3-button" href="IngresarInv.jsp" onclick="w3_close()">Ingresar Libro</a>
+            <a class="w3-bar-item w3-button" href="Modificar.jsp" onclick="w3_close()">Modificar</a>
+            <a class="w3-bar-item w3-button" href="Prestamos.jsp" onclick="w3_close()">Prestamos</a>
+            <a class="w3-bar-item w3-button" href="Devoluciones.jsp" onclick="w3_close()">Devoluciones</a>
+            <a class="w3-bar-item w3-button" href="reservas.jsp" onclick="w3_close()">Reservas Pendientes</a>
+            <a class="w3-bar-item w3-button" href="historial.jsp" onclick="w3_close()">Historial</a>
+            <a class="w3-bar-item w3-button" href="Busquedas.jsp" onclick="w3_close()">Busquedas</a>
+            <a class="w3-bar-item w3-button" href="Estadisticas.jsp" onclick="w3_close()">Estadísticas</a>
             <a class="w3-bar-item w3-button" href="#" onclick="w3_close()">Convenios</a>
-            <a class="w3-bar-item w3-button" href="CargarBaseDatos.html" onclick="w3_close()">Cargar base de datos</a>
+            <a class="w3-bar-item w3-button" href="CargarBaseDatos.jsp" onclick="w3_close()">Cargar base de datos</a>
         </nav>      
         <div class="w3-container myTop">
             <div class="w3-white w3-xlarge w3-border-bottom">
@@ -69,26 +70,26 @@
                         <td contenteditable class="prop"></td>
                         <td contenteditable class="res"></td>
                         <td><select style="text-align: center; margin: 0 auto;" name="area" id="area" onchange="listarPorArea();">
-                                <option value="" disabled selected>--Área--</option>
+                                <option value="" disabled selected>--Ãrea--</option>
                                 <option>Enciclopedia</option>
                                 <option>Diccionarios</option>
-                                <option>Español</option>
-                                <option>Matemáticas</option>
-                                <option>Física</option>
-                                <option>Química</option>
+                                <option>EspaÃ±ol</option>
+                                <option>MatemÃ¡ticas</option>
+                                <option>FÃ­sica</option>
+                                <option>QuÃ­mica</option>
                                 <option>Sociales</option>
                                 <option>Ingles</option>
                                 <option>Ciencias Naturales</option>
                                 <option>Preescolar</option>
-                                <option>Filosofía</option>
-                                <option>Religión</option>
-                                <option>Ética y Valores</option>
-                                <option>Informática</option>
+                                <option>FilosofÃ­a</option>
+                                <option>ReligiÃ³n</option>
+                                <option>Ãtica y Valores</option>
+                                <option>InformÃ¡tica</option>
                                 <option>Atlas</option>
-                                <option>Salud y Educación Sexual</option>
-                                <option>Dibujo Técnico y Artística</option>
+                                <option>Salud y EducaciÃ³n Sexual</option>
+                                <option>Dibujo TÃ©cnico y ArtÃ­stica</option>
                                 <option>Libros Institucionales</option>
-                                <option>Material Didáctico</option>
+                                <option>Material DidÃ¡ctico</option>
                                 <option>Videos - DVD- CD-ROOM</option>
                                 <option>Equipo</option>
                             </select>
@@ -107,17 +108,17 @@
                 <header class="w3-container w3-black"> 
                     <span onclick="document.getElementById('id02').style.display = 'none'" 
                           class="w3-button w3-display-topright">&times;</span>
-                    <h2>Se ingresará el siguiente elemento</h2>
+                    <h2>Se ingresarÃ¡ el siguiente elemento</h2>
                 </header>
                 <br>
                 <div class="w3-container">                    
                     <p class="w3-center">Etiqueta: <a id="et"></a></p>
                     <p class="w3-center">Nombre: <a id="nomBR"></a></p>
                     <p class="w3-center">Cantidad: <a id="cant"></a></p>
-                    <p class="w3-center">Ubicación: <a id="ub"></a></p>
+                    <p class="w3-center">UbicaciÃ³n: <a id="ub"></a></p>
                     <p class="w3-center">Propiedad: <a id="prop"></a></p>
                     <p class="w3-center">Responsable: <a id="res"></a></p>
-                    <p class="w3-center">Área: <a id="areaB"></a></p>
+                    <p class="w3-center">Ãrea: <a id="areaB"></a></p>
                     <p class="w3-center">Colegio: <a id="col"></a></p>
                     <br>
                 </div>
@@ -151,6 +152,13 @@
                 <a href="#" id="you"><i class="fa fa-youtube"></i></a>                
             </div>
         </div>
+        <%
+            String usuario = (String) session.getAttribute("user");
+            if (usuario == null) {
+                response.sendRedirect("../index.jsp");
+            }
+
+        %>
 
     </body>
 

@@ -16,11 +16,7 @@ public class DaoReservas {
 
     public boolean insertar(reserva p) throws IllegalArgumentException, IllegalAccessException, URISyntaxException, SQLException {
         boolean respuesta = false;
-        int etiqueta = Integer.valueOf(p.idElemento);
-        int cantidad = Integer.valueOf(p.cantidad);
         respuesta = a.insertar(p);
-        SQLgen sql = new SQLgen();
-        sql.restarInventario(etiqueta, cantidad);
         return respuesta;
     }
 

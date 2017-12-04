@@ -1,7 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
     <title>Inventario</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -23,14 +24,14 @@
             </div>
         </div>
         <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:25%;min-width:300px" id="mySidebar">
-            <a href="perfil.html"><img src="" id="imageUser" class="mid" alt="NF"></a>
+            <a href="perfil.jsp"><img src="" id="imageUser" class="mid" alt="NF"></a>
             <p id="nombre" class="w3-bar-item"></p>            
-            <a class="w3-bar-item w3-button w3-theme-dark" href="homeUser.html" onclick="w3_close()">Home</a>
-            <a class="w3-bar-item w3-button" href="Listados.html" onclick="w3_close()">Inventario Disponible</a>
-            <a class="w3-bar-item w3-button" href="reservas.html" onclick="w3_close()">Reservar</a>
-            <a class="w3-bar-item w3-button" href="historialReservas.html" onclick="w3_close()">Historial Reservas</a>
-            <a class="w3-bar-item w3-button" href="historialPrestamos.html" onclick="w3_close()">Historial Prestamos</a>
-            <a class="w3-bar-item w3-button" href="Busquedas.html" onclick="w3_close()">Busquedas</a>
+            <a class="w3-bar-item w3-button w3-theme-dark" href="homeUser.jsp" onclick="w3_close()">Home</a>
+            <a class="w3-bar-item w3-button" href="Listados.jsp" onclick="w3_close()">Inventario Disponible</a>
+            <a class="w3-bar-item w3-button" href="reservas.jsp" onclick="w3_close()">Reservar</a>
+            <a class="w3-bar-item w3-button" href="historialReservas.jsp" onclick="w3_close()">Historial Reservas</a>
+            <a class="w3-bar-item w3-button" href="historialPrestamos.jsp" onclick="w3_close()">Historial Prestamos</a>
+            <a class="w3-bar-item w3-button" href="Busquedas.jsp" onclick="w3_close()">Busquedas</a>
         </nav>     
         <div class="w3-container myTop">
             <div class="w3-white w3-xlarge w3-border-bottom">
@@ -95,6 +96,13 @@
                 <a href="#" id="you"><i class="fa fa-youtube"></i></a>                
             </div>
         </div>
+        <%
+            String usuario = (String) session.getAttribute("user");
+            if (usuario == null) {
+                response.sendRedirect("../index.jsp");
+            }
+
+        %>
 
     </body>
 

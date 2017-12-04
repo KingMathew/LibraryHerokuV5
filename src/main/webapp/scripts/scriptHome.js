@@ -70,7 +70,7 @@ function closeSesion() {
     }).done(function (response) {
         console.log(response);
         if (response == "false") {
-            window.location.href = "../index.html";
+            window.location.href = "../index.jsp";
         }
     });
 }

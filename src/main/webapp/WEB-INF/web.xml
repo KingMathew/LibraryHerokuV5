@@ -17,8 +17,8 @@
         <servlet-class>Controlador.ListarPorArea</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>BuscarElementoPorNombre</servlet-name>
-        <servlet-class>Controlador.BuscarElementoPorNombre</servlet-class>
+        <servlet-name>ListarTodo</servlet-name>
+        <servlet-class>Controlador.ListarTodo</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>changePassword</servlet-name>
@@ -84,6 +84,10 @@
         <servlet-name>ExcelPlantilla</servlet-name>
         <servlet-class>Controlador.ExcelPlantilla</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarPrestamosUsuario</servlet-name>
+        <servlet-class>Controlador.ListarPrestamosUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>upload</servlet-name>
         <url-pattern>/upload</url-pattern>
@@ -121,8 +125,8 @@
         <url-pattern>/ListarPorArea</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>BuscarElementoPorNombre</servlet-name>
-        <url-pattern>/BuscarElementoPorNombre</url-pattern>
+        <servlet-name>ListarTodo</servlet-name>
+        <url-pattern>/ListarTodo</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>uploadServlet</servlet-name>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>ExcelPlantilla</servlet-name>
         <url-pattern>/ExcelPlantilla</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPrestamosUsuario</servlet-name>
+        <url-pattern>/ListarPrestamosUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

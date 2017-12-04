@@ -30,7 +30,7 @@ public class MainGlassfish {
         System.out.println("------output of set log level: " + result.getOutput());
         Deployer deployer = glassfish.getDeployer();
 
-        ScatteredArchive archive = new ScatteredArchive("myApp",
+        ScatteredArchive archive = new ScatteredArchive("home",
                 ScatteredArchive.Type.WAR, new File(webappDirLocation));
         // target/classes directory contains my complied servlets
         archive.addClassPath(new File("target", "classes"));

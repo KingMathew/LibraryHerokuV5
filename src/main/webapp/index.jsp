@@ -1,7 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>       
 <!DOCTYPE html>
 <html>
     <title>Library-Soft</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -10,13 +11,13 @@
     <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>  
     <script type="text/javascript" src="scripts/scriptIndex.js"></script> 
     <body>
-        <div id="contenedor_carga">
+    <!--    <div id="contenedor_carga">
             <img src="Images/titulo1.png" alt="Not-Found">
             <div id="carga"></div>
             <div class="tag">
                 <p>Cargando...</p>
             </div>
-        </div>
+        </div>-->
 
         <div class="bgimg w3-display-container w3-text-white">
             <div class="w3-display-middle w3-jumbo">
@@ -41,10 +42,11 @@
                     <h1>Log-in</h1>
                 </div>
                 <div class="w3-container">
-                    <p><input id="campo1" style="text-align: center; margin-left: 15%; width: 70%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Usuario" required></p>
-                    <p><input id="campo2" style="text-align: center; margin-left: 15%; width: 70%" onKeyDown="if (event.keyCode == 13)
-                                iniciarSesion();" class="w3-input w3-padding-16 w3-border" type="password" placeholder="Contraseña" required></p>                        
-                    <p><button style="margin-left: 20%; width: 60%" class="w3-button w3-black w3-round-xlarge" type="submit" onclick="iniciarSesion();">INGRESAR</button></p>
+                    <form action="Inicio" method="POST">
+                        <p><input name="campo1" style="text-align: center; margin-left: 15%; width: 70%" class="w3-input w3-padding-16 w3-border" type="text" placeholder="Usuario" required></p>
+                        <p><input name="campo2" style="text-align: center; margin-left: 15%; width: 70%" class="submit_on_enter w3-input w3-padding-16 w3-border" type="password" placeholder="Contraseña" required></p>                        
+                        <p><button style="margin-left: 20%; width: 60%" class="w3-button w3-black w3-round-xlarge" type="submit">INGRESAR</button></p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -81,7 +83,18 @@
                 </div>
             </div>
         </div>
+        <%
+            if (request.getAttribute("Fail") != null) {
+                String respuesta = (String) request.getAttribute("Fail");
+                if (respuesta.equals("NO")) {
+        %>
+        <script>
+            alert("USUARIO Y/O CONTRASEÑA INCORRECTOS.");
+        </script>
 
+        <%      } }
+        %>
     </body>
 </html>
+
 

@@ -49,8 +49,9 @@ public class SQLgen<T> {
 
         return rs;
     }
-    public int insertarFull(T p) throws IllegalArgumentException, IllegalAccessException{
-        int a=0;
+
+    public int insertarFull(T p) throws IllegalArgumentException, IllegalAccessException {
+        int a = 0;
         try {
             Field[] f = p.getClass().getDeclaredFields();
             String consulta = "insert into " + p.getClass().getSimpleName() + " values(" + "'";
@@ -111,7 +112,7 @@ public class SQLgen<T> {
                     break;
                 }
             }
-            query+=" order by etiqueta asc";
+            query += " order by etiqueta asc";
             System.out.println(query);
             Statement st = this.conexion.createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -139,6 +140,7 @@ public class SQLgen<T> {
         return res;
 
     }
+
     public ArrayList<T> Select5(T p) throws InvocationTargetException, NoSuchMethodException, InstantiationException {
         ArrayList<T> res = new ArrayList<T>();
         Field[] f = p.getClass().getDeclaredFields();
@@ -152,6 +154,7 @@ public class SQLgen<T> {
             }
             Statement st = this.conexion.createStatement();
             ResultSet rs = st.executeQuery(query);
+            System.out.println(query);
             while (rs.next()) {
                 T f2 = (T) p.getClass().newInstance();
                 Field[] f3 = f2.getClass().getDeclaredFields();
@@ -303,7 +306,7 @@ public class SQLgen<T> {
     public ArrayList<T> Select4(T p) {
         ArrayList<T> res = new ArrayList<T>();
         Field[] f = p.getClass().getDeclaredFields();
-        String query = "select * from " + p.getClass().getSimpleName()+" order by etiqueta asc";
+        String query = "select * from " + p.getClass().getSimpleName() + " order by etiqueta asc";
         try {
             System.out.println(query);
             Statement st = this.conexion.createStatement();
@@ -484,11 +487,12 @@ public class SQLgen<T> {
 
         return respuesta;
     }
+
     public ArrayList<reservasPendientes> listarReservas2(String id) {
         ArrayList<reservasPendientes> respuesta = new ArrayList();
         String consulta = "select usuarios.nombreSol, usuarios.cursoArea, inventario.nombre, reserva.cantidad,   reserva.fechaActual, reserva.fechaReserva, reserva.estado\n"
                 + "from((inventario inner join reserva on (inventario.etiqueta = reserva.idElemento)) inner join usuarios on (usuarios.identificador=reserva.idSol))"
-                + " where usuarios.identificador = '"+id+"'";
+                + " where usuarios.identificador = '" + id + "'";
 
         try {
 
@@ -517,11 +521,44 @@ public class SQLgen<T> {
         return respuesta;
     }
 
+    public ArrayList<HistorialPrestamos> listarPrestamos2(String id) {
+        ArrayList<HistorialPrestamos> respuesta = new ArrayList();
+        String consulta = "select usuarios.nombreSol, usuarios.cursoArea, inventario.nombre, prestamo.cantidadPrestamo,   prestamo.fechaActual, prestamo.fechaDev, prestamo.estado\n"
+                + "from((inventario inner join prestamo on (inventario.etiqueta = prestamo.etiquetaInv))"
+                + " inner join usuarios on (usuarios.identificador=prestamo.identificadorSol))  where usuarios.identificador = '" + id + "'";
+
+        try {
+
+            Statement statement = this.conexion.createStatement();
+
+            ResultSet resultado
+                    = statement.executeQuery(consulta);
+            while (resultado.next()) {
+                HistorialPrestamos pr = new HistorialPrestamos();
+
+                pr.setNombreUsuario(resultado.getString("nombreSol"));
+                pr.setCursoArea(resultado.getString("cursoArea"));
+                pr.setNombreElemento(resultado.getString("nombre"));
+                pr.setCantidadPrestamo(resultado.getInt("cantidadPrestamo"));
+                pr.setFechaInicio(resultado.getString("fechaActual"));
+                pr.setFechaDevolucion(resultado.getString("fechaDev"));
+                pr.setEstadoPrestamo(resultado.getString("estado"));
+
+                respuesta.add(pr);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return respuesta;
+    }
+
     public boolean restarInventario(int etiqueta, int cantidad) {
         boolean resultado = false;
         try {
 
-            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)-"+cantidad+" where etiqueta =?";
+            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)-" + cantidad + " where etiqueta =?";
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setInt(1, etiqueta);
@@ -537,7 +574,7 @@ public class SQLgen<T> {
         boolean resultado = false;
         try {
 
-            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)+"+cantidad+" where etiqueta =?";
+            String consulta = "update inventario set cantidadDisponible =  cast(cantidadDisponible as int)+" + cantidad + " where etiqueta =?";
 
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setInt(1, etiqueta);
@@ -554,7 +591,7 @@ public class SQLgen<T> {
         int etiqueta = Integer.valueOf(etiqetaInv);
         int newCantidad = Integer.valueOf(cantidad);
         try {
-            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorsol='"+idSol+"' and etiquetainv="+etiqetaInv+"";
+            String consulta = "UPDATE prestamo SET estado = 'devuelto' WHERE identificadorsol='" + idSol + "' and etiquetainv=" + etiqetaInv + "";
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             a = statement.executeUpdate();
         } catch (SQLException ex) {
@@ -620,7 +657,7 @@ public class SQLgen<T> {
     public boolean borrar2(int etiqueta) {
         boolean resultado = true;
         try {
-            String consulta = "DELETE FROM inventario WHERE etiqueta=?";            
+            String consulta = "DELETE FROM inventario WHERE etiqueta=?";
             PreparedStatement statement = this.conexion.prepareStatement(consulta);
             statement.setInt(1, etiqueta);
             resultado = statement.execute();

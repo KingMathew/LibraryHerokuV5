@@ -1,7 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
     <title>Mi Perfil</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -26,21 +27,15 @@
             </div>
         </div>
         <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:25%;min-width:300px" id="mySidebar">
-            <a href="perfil.html"><img src="" id="imageUser" class="mid" alt="NF"></a>
+            <a href="perfil.jsp"><img src="" id="imageUser" class="mid" alt="NF"></a>
             <p id="nombre" class="w3-bar-item"></p>            
-            <a class="w3-bar-item w3-button w3-theme-dark" href="homeAdmin.html" onclick="w3_close()">Home</a>
-            <a class="w3-bar-item w3-button" href="Listados.html" onclick="w3_close()">Inventario Disponible</a>
-            <a class="w3-bar-item w3-button" href="IngresarInv.html" onclick="w3_close()">Ingresar Libro</a>
-            <a class="w3-bar-item w3-button" href="Modificar.html" onclick="w3_close()">Modificar</a>
-            <a class="w3-bar-item w3-button" href="Prestamos.html" onclick="w3_close()">Prestamos</a>
-            <a class="w3-bar-item w3-button" href="Devoluciones.html" onclick="w3_close()">Devoluciones</a>
-            <a class="w3-bar-item w3-button" href="reservas.html" onclick="w3_close()">Reservas Pendientes</a>
-            <a class="w3-bar-item w3-button" href="historial.html" onclick="w3_close()">Historial</a>
-            <a class="w3-bar-item w3-button" href="Busquedas.html" onclick="w3_close()">Busquedas</a>
-            <a class="w3-bar-item w3-button" href="Estadisticas.html" onclick="w3_close()">Estadísticas</a>
-            <a class="w3-bar-item w3-button" href="#" onclick="w3_close()">Convenios</a>
-            <a class="w3-bar-item w3-button" href="CargarBaseDatos.html" onclick="w3_close()">Cargar base de datos</a>
-        </nav>      
+            <a class="w3-bar-item w3-button w3-theme-dark" href="homeUser.jsp" onclick="w3_close()">Home</a>
+            <a class="w3-bar-item w3-button" href="Listados.jsp" onclick="w3_close()">Inventario Disponible</a>
+            <a class="w3-bar-item w3-button" href="reservas.jsp" onclick="w3_close()">Reservar</a>
+            <a class="w3-bar-item w3-button" href="historialReservas.jsp" onclick="w3_close()">Historial Reservas</a>
+            <a class="w3-bar-item w3-button" href="historialPrestamos.jsp" onclick="w3_close()">Historial Prestamos</a>
+            <a class="w3-bar-item w3-button" href="Busquedas.jsp" onclick="w3_close()">Busquedas</a>
+        </nav>       
         <div class="w3-container myTop">
             <div class="w3-white w3-xlarge w3-border-bottom">
                 <div class="w3-button w3-padding-16 w3-left" title="Menú" onclick="w3_open()"><i class="fa fa-bars"></i></div>
@@ -88,19 +83,19 @@
             <div style="width: 30%" class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
                     <span onclick="document.getElementById('changePass').style.display = 'none'" class="w3-button w3-display-topright w3-large">x</span>
-                    <h1>Cambiar Contraseña</h1>
+                    <h1>Cambiar ContraseÃ±a</h1>
                 </div>
                 <div class="w3-container">
-                    <p class="pading"><input id="campo1" class="w3-input w3-padding-16 w3-border" type="password" placeholder="Contraseña Antigua" required></p>
-                    <p class="pading"><input id="pwd1" class="w3-input w3-padding-16 w3-border" type="password" placeholder="Contraseña Nueva" required></p>
-                    <p class="pading"><input id="pwd2" class="w3-input w3-padding-16 w3-border" type="password" placeholder="Repita Contraseña" required></p>
+                    <p class="pading"><input id="campo1" class="w3-input w3-padding-16 w3-border" type="password" placeholder="ContraseÃ±a Antigua" required></p>
+                    <p class="pading"><input id="pwd1" class="w3-input w3-padding-16 w3-border" type="password" placeholder="ContraseÃ±a Nueva" required></p>
+                    <p class="pading"><input id="pwd2" class="w3-input w3-padding-16 w3-border" type="password" placeholder="Repita ContraseÃ±a" required></p>
                     <p class="pading"><button style="margin-left: 20%; width: 60%" class="w3-button w3-black w3-round-xlarge" type="submit" onclick="changePassword();">CAMBIAR</button></p>
                     <div id="divPass" class="divcito">
                         <h3 style="text-align: center; margin: 0 auto">Condiciones:</h3>
-                        <p style="text-align: center" id="letter" class="invalid">Al menos una <b>letra minúscula</b></p>
-                        <p style="text-align: center" id="capital" class="invalid">Al menos una <b>lera mayúscula</b></p>
-                        <p style="text-align: center" id="number" class="invalid">Al menos un <b>número</b></p>
-                        <p style="text-align: center" id="length" class="invalid">Mínimo <b>8 caracteres</b></p>
+                        <p style="text-align: center" id="letter" class="invalid">Al menos una <b>letra minÃºscula</b></p>
+                        <p style="text-align: center" id="capital" class="invalid">Al menos una <b>lera mayÃºscula</b></p>
+                        <p style="text-align: center" id="number" class="invalid">Al menos un <b>nÃºmero</b></p>
+                        <p style="text-align: center" id="length" class="invalid">MÃ­nimo <b>8 caracteres</b></p>
                         <p style="text-align: center" id="coin" class="invalid">Las claves <b>deben coincidir</b></p>
                     </div>
                     <br>
@@ -124,6 +119,13 @@
                 </div>                
             </div>
         </div>
+        <%
+            String usuario = (String) session.getAttribute("user");
+            if (usuario == null) {
+                response.sendRedirect("../index.jsp");
+            }
+
+        %>
 
     </body>
 

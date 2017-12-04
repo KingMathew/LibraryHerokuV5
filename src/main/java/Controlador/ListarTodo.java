@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
-public class BuscarElementoPorNombre extends HttpServlet {
+public class ListarTodo extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,9 +29,9 @@ public class BuscarElementoPorNombre extends HttpServlet {
             response.setContentType("application/json;");
             response.getWriter().write(json);
         } catch (URISyntaxException ex) {
-            Logger.getLogger(BuscarElementoPorNombre.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListarTodo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(BuscarElementoPorNombre.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListarTodo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

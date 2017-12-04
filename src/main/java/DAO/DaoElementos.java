@@ -32,7 +32,7 @@ public class DaoElementos {
     public ArrayList<inventario> buscar(String et) throws InvocationTargetException, InstantiationException, NoSuchMethodException {
         ArrayList<inventario> respuesta = new ArrayList();
         inventario inv1 = new inventario(et, null, null, null, null, null, null, null);
-        respuesta = a.Select(inv1);
+        respuesta = a.Select5(inv1);
         return respuesta;
     }
 

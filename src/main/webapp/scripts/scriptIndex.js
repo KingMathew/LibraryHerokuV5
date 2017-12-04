@@ -1,5 +1,11 @@
 window.setTimeout("document.getElementById('contenedor_carga').style.display='none';", 1500);
 window.onload = function () {
+    $('.submit_on_enter').keydown(function (event) {
+        if (event.keyCode == 13) {
+            this.form.submit();
+            return false;
+        }
+    });
     document.getElementById("divPass").style.display = "none";
     $("#pwd1").focus(function () {
         document.getElementById("divPass").style.display = "block";
@@ -141,50 +147,3 @@ function validarRegistro() {
         alert("Debe llenar los campos solicitados para poder registrarse");
     }
 }
-
-function iniciarSesion() {
-
-    var parametros = {
-        "valor1": $('#campo1').val(),
-        "valor2": $('#campo2').val()
-    };
-
-    if ($('#campo2').val() != "null") {
-
-
-        $.ajax({
-            data: parametros,
-            url: "Inicio",
-            type: "POST"
-
-        }).done(function (data) {
-            console.log(data);
-            if ($.isEmptyObject(data)) {
-                alert("Usuario y/o contraseña incorrectos");
-            } else {
-                if (data.estado != "true") {
-                    alert("Por favor realice la verificación por correo");
-                } else {
-                    if (data.tipo == "Estudiante" || data.tipo == "Docente") {
-                        window.location.href = "Usuario/homeUser.html";
-                    }
-                    if (data.tipo == "Directivo" || data.tipo == "Administrativo") {
-                        window.location.href = "Admin/homeAdmin.html";
-                    }
-
-                }
-
-            }
-        });
-    } else {
-        alert("Usuario y/o contraseña incorrectos");
-        alert("Esta seguro de que ya se ha registrado");
-    }
-
-
-}
-
-
-
-
-

@@ -6,12 +6,12 @@ function obtenerData() {
     var indic = 1;
     $.ajax({
         type: 'GET'
-        , url: "../BuscarElementoPorNombre"
+        , url: "../ListarTodo"
         , async: true
         , cache: false
         , success: function (resp) {
             $.each(resp, function (indice, inventario) {
-                $("#tablaPrest").append($("<tr id='" + indic + "' onclick='pp(this);'> ").append(("<td>" + inventario.etiqueta + "</td>"
+                $("#tablaPrest").append($("<tr onclick='pp();' > ").append(("<td>" + inventario.etiqueta + "</td>"
                         + "<td>" + inventario.nombre + "</td>"
                         + "<td>" + inventario.cantidadDisponible + "</td>"
                         + "<td>" + inventario.ubicacion + "</td>"
@@ -24,32 +24,36 @@ function obtenerData() {
         }
     });
 }
-function pp(x) {
-    var y = x.rowIndex;
+function pp() {
+    var table = document.getElementById('tablaPrest');
+    for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].onclick = function () {
+            var parametros = {
+                "identificador": this.cells[0].innerHTML
+            };
+            $.ajax({
+                data: parametros,
+                url: "../Reservas",
+                type: "POST"
+            }).done(function (response) {
+                console.log(response);
+                var cantidad = response.cantidadDisponible;
+                if (cantidad <= 0) {
+                    alert("No hay más elementos disponibles de este elemento");
+                } else {
+                    document.getElementById('prestamo').style.display = 'block';
+                    document.getElementById('element').innerHTML = response.etiqueta;
+                    etiqueta = response.etiqueta;
+                    document.getElementById('nombreLibro').innerHTML = response.nombre;
+                    document.getElementById('cantidad').innerHTML = response.cantidadDisponible;
+                    var input = document.getElementById("campo1");
+                    input.setAttribute("max", cantidad);
+                }
 
-    var parametros = {
-        "identificador": y
-    };
-    $.ajax({
-        data: parametros,
-        url: "../Reservas",
-        type: "POST"
-    }).done(function (response) {
-        console.log(response);
-        var cantidad = response.cantidadDisponible;
-        if (cantidad <= 0) {
-            alert("No hay más elementos disponibles de este elemento");
-        } else {
-            document.getElementById('prestamo').style.display = 'block';
-            document.getElementById('element').innerHTML = response.etiqueta;
-            etiqueta = response.etiqueta;
-            document.getElementById('nombreLibro').innerHTML = response.nombre;
-            document.getElementById('cantidad').innerHTML = response.cantidadDisponible;
-            var input = document.getElementById("campo1");
-            input.setAttribute("max", cantidad);
-        }
 
-    });
+            });
+        };
+    }
 }
 
 
@@ -84,7 +88,7 @@ function Buscar() {
     }
 }
 
-function Reserva(fechaRes, cantidad, idSol) {
+function prestar(fechaRes, cantidad, idSol) {
 
     if (fechaRes != "" && cantidad != "" && idSol != "") {
         var parametros = {
@@ -104,7 +108,7 @@ function Reserva(fechaRes, cantidad, idSol) {
                 alert("No se pudo realizar el prestamo, tal vez el id del solicitante no es correcto");
             } else {
                 alert("Prestamo realizado satisfactoriamente");
-                window.location.href = "historial.html";
+                window.location.href = "historial.jsp";
             }
         });
 

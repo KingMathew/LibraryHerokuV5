@@ -103,4 +103,10 @@ public class usuarios {
         this.identificador = identificador;
     }
 
+    @Override
+    public String toString() {
+        return "usuarios{" + "identificador=" + identificador + ", nombreSol=" + nombreSol + ", tipo=" + tipo + ", cursoArea=" + cursoArea + ", colegio=" + colegio + ", clave=" + clave + ", imagen=" + imagen + ", correo=" + correo + ", estado=" + estado + '}';
+    }
+    
+
 }
