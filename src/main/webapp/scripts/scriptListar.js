@@ -66,7 +66,7 @@ function modificar() {
         document.getElementById('id01').style.display = 'none';
         if (data == false) {
             alert("Datos Modificados");
-            window.location.href = "Modificar.html";
+            window.location.href = "Modificar.jsp";
         }
 
     });
