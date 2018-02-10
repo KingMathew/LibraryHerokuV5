@@ -86,7 +86,7 @@
                 <div class="w3-container">                    
                     <p class="w3-center">Para el libro: <a id="nom"></a></p>
                     <p class="w3-center"><b>Cantidad Disponible: <a id="cant"></a></b></p>
-                    <p class="w3-center"><b>UbicaciÃ³n: <a id="ub"></a></b></p>
+                    <p class="w3-center"><b>Ubicación: <a id="ub"></a></b></p>
                     <p class="w3-center"><b>Responsable: <a id="res"></a></b></p>
                     <br>
                 </div>
@@ -100,7 +100,7 @@
                 <header class="w3-container w3-black"> 
                     <span onclick="document.getElementById('id02').style.display = 'none'" 
                           class="w3-button w3-display-topright">&times;</span>
-                    <h2>Se borrarÃ¡ el siguiente elemento</h2>
+                    <h2>Se borrará el siguiente elemento</h2>
                 </header>
                 <br>
                 <div class="w3-container">                    
