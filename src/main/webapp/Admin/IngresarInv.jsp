@@ -69,7 +69,7 @@
                         <td contenteditable class="ub"></td>
                         <td contenteditable class="prop"></td>
                         <td contenteditable class="res"></td>
-                        <td><select style="text-align: center; margin: 0 auto;" name="area" id="area" onchange="listarPorArea();">
+                        <td><select style="text-align: center; margin: 0 auto;" name="area" id="area">
                                 <option value="" disabled selected>--Seleccione el Área--</option>
                                 <option>Enciclopedia</option>
                                 <option>Diccionarios</option>
