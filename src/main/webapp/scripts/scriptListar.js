@@ -38,7 +38,7 @@ function borrar() {
         document.getElementById('id02').style.display = 'none';
         if (data == false) {
             alert("Elemento borrado satisfactoriamente");
-            window.location.href = "Modificar.html";
+            window.location.href = "Modificar.jsp";
         }else{
             alert("Este elemento no se puede borrar ya que se ha prestado");
         }
