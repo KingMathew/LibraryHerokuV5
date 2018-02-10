@@ -70,26 +70,26 @@
                         <td contenteditable class="prop"></td>
                         <td contenteditable class="res"></td>
                         <td><select style="text-align: center; margin: 0 auto;" name="area" id="area" onchange="listarPorArea();">
-                                <option value="" disabled selected>--Ãrea--</option>
+                                <option value="" disabled selected>--Seleccione el Área--</option>
                                 <option>Enciclopedia</option>
                                 <option>Diccionarios</option>
-                                <option>EspaÃ±ol</option>
-                                <option>MatemÃ¡ticas</option>
-                                <option>FÃ­sica</option>
-                                <option>QuÃ­mica</option>
+                                <option>Español</option>
+                                <option>Matemáticas</option>
+                                <option>Física</option>
+                                <option>Química</option>
                                 <option>Sociales</option>
                                 <option>Ingles</option>
                                 <option>Ciencias Naturales</option>
                                 <option>Preescolar</option>
-                                <option>FilosofÃ­a</option>
-                                <option>ReligiÃ³n</option>
-                                <option>Ãtica y Valores</option>
-                                <option>InformÃ¡tica</option>
+                                <option>Filosofía</option>
+                                <option>Religión</option>
+                                <option>Ética y Valores</option>
+                                <option>Informática</option>
                                 <option>Atlas</option>
-                                <option>Salud y EducaciÃ³n Sexual</option>
-                                <option>Dibujo TÃ©cnico y ArtÃ­stica</option>
+                                <option>Salud y Educación Sexual</option>
+                                <option>Dibujo Técnico y Artística</option>
                                 <option>Libros Institucionales</option>
-                                <option>Material DidÃ¡ctico</option>
+                                <option>Material Didáctico</option>
                                 <option>Videos - DVD- CD-ROOM</option>
                                 <option>Equipo</option>
                             </select>
