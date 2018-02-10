@@ -108,17 +108,17 @@
                 <header class="w3-container w3-black"> 
                     <span onclick="document.getElementById('id02').style.display = 'none'" 
                           class="w3-button w3-display-topright">&times;</span>
-                    <h2>Se ingresarÃ¡ el siguiente elemento</h2>
+                    <h2>Se ingresará el siguiente elemento</h2>
                 </header>
                 <br>
                 <div class="w3-container">                    
                     <p class="w3-center">Etiqueta: <a id="et"></a></p>
                     <p class="w3-center">Nombre: <a id="nomBR"></a></p>
                     <p class="w3-center">Cantidad: <a id="cant"></a></p>
-                    <p class="w3-center">UbicaciÃ³n: <a id="ub"></a></p>
+                    <p class="w3-center">Ubicación: <a id="ub"></a></p>
                     <p class="w3-center">Propiedad: <a id="prop"></a></p>
                     <p class="w3-center">Responsable: <a id="res"></a></p>
-                    <p class="w3-center">Ãrea: <a id="areaB"></a></p>
+                    <p class="w3-center">Área: <a id="areaB"></a></p>
                     <p class="w3-center">Colegio: <a id="col"></a></p>
                     <br>
                 </div>
